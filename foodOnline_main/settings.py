@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+AUTH_USER_MODEL = 'accounts.User'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -96,6 +99,8 @@ DATABASES = {
 
 
 
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -136,7 +141,17 @@ STATICFILES_DIRS = [
     'foodOnline_main/static'
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR /'media'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    
+}
