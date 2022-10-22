@@ -14,6 +14,7 @@ from .models import User, UserProfile
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.exceptions import PermissionDenied
+from vendor.models import Vendor
 
 # Create your views here.
 def check_role_vendor(user):

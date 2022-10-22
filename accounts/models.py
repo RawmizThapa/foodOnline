@@ -107,6 +107,9 @@ class UserProfile(models.Model):
     created_at = models.DateTimeField(auto_now_add = True, null = True, blank = True)
     modified_at =  models.DateTimeField(auto_now = True, null = True, blank = True)
 
+    def full_address(self):
+        return f'{self.address_line_1}, {self.address_line_2}'
+
     def __str__(self):
         return self.user.email
 
