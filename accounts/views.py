@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from accounts.utils import detectUser, send_verification_email
 from django.utils.http import urlsafe_base64_decode
 from django.contrib.auth.tokens import default_token_generator
-from vendor.forms import vendorForm
+from vendor.forms import VendorForm
 from .forms import UserForm
 from .models import User, UserProfile
 from django.contrib import messages, auth
@@ -79,7 +79,7 @@ def registerVendor(request):
         return redirect('dashboard')
     elif request.method == 'POST':
         form = UserForm(request.POST)
-        v_form = vendorForm(request.POST, request.FILES)
+        v_form = VendorForm(request.POST, request.FILES)
         if form.is_valid() and v_form.is_valid():
             
             first_name = form.cleaned_data['first_name']
@@ -107,7 +107,7 @@ def registerVendor(request):
         
     else:
         form = UserForm()
-        v_form = vendorForm()
+        v_form = VendorForm()
 
     
 
