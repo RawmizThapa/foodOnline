@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% load static %} {% block content %} {% include
-'includes/alerts.html' %}
+{% extends 'base.html' %}
+ {% load static %}
+  {% block content %}
+   {% include 'includes/alerts.html' %}
 
 <div class="main-section">
   {% include 'includes/cover.html' %}
@@ -13,7 +15,9 @@
           <div class="user-dashboard loader-holder">
             <div class="user-holder">
               <h5>Build your Food Menu</h5>
-              <hr />
+              <hr>
+              <button class="btn btn-secondary" onclick="history.back()"> <i class="fa fa-angle-left" aria-hidden="true"></i> &nbsp;Back</button>
+              <br></br>
               <h6>Modify Category</h6>
               <form action="{% url 'edit_category' category.id %}" method="POST">
                 {% csrf_token %}
@@ -44,6 +48,8 @@
                 <button type="submit" class="btn btn-info">
                   <i class="fa fa-check" aria-hidden="true"></i> &nbsp;Update
                 </button>
+                <a href="{% url 'delete_category' category.id %}" onclick="return confirm('Are you sure you want to delete this Category?')" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> &nbsp; Delete</a>
+
               </form>
               <!-- My Restaurants Form Start -->
             </div>

@@ -30,7 +30,11 @@
                                                                 <li class="gal-img">
                                                                     <div class="drag-list">
                                                                         <div class="item-thumb">
+                                                                            {% if profile.profile_picture %}
                                                                             <img class="thumbnail" src="{{ profile.profile_picture.url }}" alt="Profile Picture">
+                                                                            {% else %}
+                                                                            <img class="thumbnail" src="{% static 'images/default-profile.PNG' %}" alt="Profile Picture">
+                                                                            {% endif %}
                                                                         </div>
                                                                         
                                                                     </div>
@@ -54,7 +58,11 @@
                                                                 <li class="gal-img">
                                                                     <div class="drag-list">
                                                                         <div class="item-thumb">
+                                                                            {% if profile.cover_pictures %}
                                                                             <img class="thumbnail" src="{{ profile.cover_pictures.url }}" alt="Cover Picture">
+                                                                            {% else %}
+                                                                            <img class="thumbnail" src="{% static 'images/default-cover.PNG' %}" alt="Cover Picture">
+                                                                            {% endif %}
                                                                         </div>
                                                                     </div>
                                                                     
