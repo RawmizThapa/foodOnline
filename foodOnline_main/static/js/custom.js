@@ -200,7 +200,7 @@ $(document).ready(function() {
             document.getElementById("empty-cart").style.display = "block";
         }
     }
-
+ 
     function applyCartAmounts(subtotal, tax, grand_total) {
         if(window.location.pathname == '/cart/') {
             $('#subtotal').html(subtotal)
