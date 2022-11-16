@@ -3,10 +3,13 @@
         "chkcart",
         "cprofile",
         "csrfmiddlewaretoken",
+        "csrftoken",
         "foodimages",
         "fooditem",
         "fooditems",
         "foodtitle",
+        "osgeo",
+        "simplejson",
         "superadmin",
         "sweetalert",
         "vprofile"
